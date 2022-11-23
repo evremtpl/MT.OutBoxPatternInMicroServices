@@ -37,15 +37,15 @@ namespace MT.OutBoxPatternInMicroServices.OutboxJob.Service.Jobs
                         Order? order = JsonSerializer.Deserialize<Order>(orderOutbox.Payload);
                         if (order != null)
                         {
-                        //    OrderCreatedEvent orderCreatedEvent = new()
-                        //    {
-                        //        Description = order.Description,
-                        //        OrderId = order.Id,
-                        //        Quantity = order.Quantity,
-                        //        IdempotentToken = orderOutbox.IdempotentToken
-                        //    };
+                            OrderCreatedEvent orderCreatedEvent = new()
+                            {
+                                Description = order.Description,
+                                OrderId = order.Id,
+                                Quantity = order.Quantity,
+                                IdempotentToken = orderOutbox.IdempotentToken
+                            };
 
-                            //await _publishEndpoint.Publish(orderCreatedEvent);
+                            await _publishEndpoint.Publish(orderCreatedEvent);
                         }
                     }
 

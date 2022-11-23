@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MT.OutBoxPatternInMicroServices.Shared.Events.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MT.OutBoxPatternInMicroServices.Shared.Events
 {
-    public interface OrderCreatedEvent
+    public class OrderCreatedEvent : IEvent
     {
         public Guid OrderId { get; set; }
         public int Quantity { get; set; }
