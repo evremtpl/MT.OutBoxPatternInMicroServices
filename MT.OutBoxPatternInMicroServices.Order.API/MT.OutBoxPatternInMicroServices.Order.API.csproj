@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MT.OutBoxPatternInMicroServices.Application\MT.OutBoxPatternInMicroServices.Application.csproj" />
     <ProjectReference Include="..\MT.OutBoxPatternInMicroServices.Persistence\MT.OutBoxPatternInMicroServices.Persistence.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-MT.OutBoxPatternInMicroServices.OutboxJob.Service-2D2D63E8-7A7A-4293-9694-94996D3A5DB2</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.30" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="6.2.5" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="6.2.5" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Quartz" Version="3.3.1" />
+    <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.3.1" />
+    <PackageReference Include="Quartz.Extensions.Hosting" Version="3.3.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MT.OutBoxPatternInMicroServices.Domain\MT.OutBoxPatternInMicroServices.Domain.csproj" />
+    <ProjectReference Include="..\MT.OutBoxPatternInMicroServices.Shared\MT.OutBoxPatternInMicroServices.Shared.csproj" />
+  </ItemGroup>
+</Project>

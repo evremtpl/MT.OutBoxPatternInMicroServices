@@ -8,8 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MT.OutBoxPatternInMicroServices.Application.Interfaces.Repository;
 using MT.OutBoxPatternInMicroServices.Persistence.Context;
-
+using MT.OutBoxPatternInMicroServices.Persistence.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +31,10 @@ namespace MT.OutBoxPatternInMicroServices.Order.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddDbContext<OutBoxDbContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("SqlSrvConStr")));
+               options.UseSqlServer(Configuration.GetConnectionString("SqlSrvConStr")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
